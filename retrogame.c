@@ -587,7 +587,6 @@ static void pinConfigLoad() {
 			  //mcpI2c[26] = 0x20;
 	          mcpI2C[mcpPin] = mcpAddr; // GPIO pin # to I2C address
 	          mcpMask |= (1 << mcpPin);
-			  printf("mcpMask is : %d\n",mcpMask);
 	          mcpPin = mcpAddr = -1;
 	        }
 	        break;
@@ -821,8 +820,6 @@ static void pinConfigLoad() {
 	uint16_t inputMask, gndMask;
 
 	if(mcpMask) { // Any port expanders mentioned in config?
-	printf("%s: Run here!\n",
-					  __progname);
 #ifdef MCP23008
 	  for(i=0; i<8; i++) { // 8 possible MCP23017 indices
 #else
